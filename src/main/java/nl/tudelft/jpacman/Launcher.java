@@ -202,7 +202,7 @@ public class Launcher {
     /**
      * Main execution method for the Launcher.
      *
-     * @param args
+     * @param args for practice that everything is working in order or not
      *            The command line arguments - which are ignored.
      * @throws IOException
      *             When a resource could not be read.
