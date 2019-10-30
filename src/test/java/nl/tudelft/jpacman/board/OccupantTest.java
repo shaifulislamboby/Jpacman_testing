@@ -52,7 +52,7 @@ class OccupantTest {
 
     /**
      * Test that the unit indeed has the target square as its base after
-     * double occupation.
+     * double occupation. (I have updated this test)
      */
     @Test
     void testReoccupy() {
