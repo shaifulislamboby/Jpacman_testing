@@ -48,13 +48,13 @@ public class ClydeTest {
         levelfactory = new LevelFactory(sprites, ghostFactory,pointCalculator);
         boardfactory = new BoardFactory(sprites);
         parser = new GhostMapParser(levelfactory, boardfactory, ghostFactory);
-//        parser.
+
     }
 
     /**
      * Test if the Player is far away from Clyde.
      */
-    @Test
+    @Test()
     void farAwayTest() {
         level = parser.parseMap(
             Lists.newArrayList("##############", "#P          C#", "##############"));

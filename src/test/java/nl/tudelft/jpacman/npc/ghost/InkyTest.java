@@ -7,6 +7,7 @@ import nl.tudelft.jpacman.level.Level;
 import nl.tudelft.jpacman.level.LevelFactory;
 import nl.tudelft.jpacman.level.Player;
 import nl.tudelft.jpacman.level.PlayerFactory;
+import nl.tudelft.jpacman.points.DefaultPointCalculator;
 import nl.tudelft.jpacman.points.PointCalculator;
 import nl.tudelft.jpacman.sprite.PacManSprites;
 import org.junit.jupiter.api.BeforeEach;
@@ -39,6 +40,7 @@ public class InkyTest {
     @BeforeEach
     void setUp() {
         PacManSprites sprites = new PacManSprites();
+        pointCalculator= new DefaultPointCalculator();
         playerfactory = new PlayerFactory(sprites);
         ghostFactory = new GhostFactory(sprites);
         levelfactory = new LevelFactory(sprites, ghostFactory,pointCalculator);
@@ -52,7 +54,7 @@ public class InkyTest {
     @Test
     void followBlinkyTest() {
         level = parser.parseMap(
-                Lists.newArrayList("##############", "#P          C#",
+            Lists.newArrayList("##############", "#P        B I#",
                 "##############"));
         Player p = playerfactory.createPacMan();
         level.registerPlayer(p);
@@ -113,7 +115,7 @@ public class InkyTest {
     @Test
     void noPathTest() {
         level = parser.parseMap(
-            Lists.newArrayList("##############", "#P    #   B #",
+            Lists.newArrayList("##############", "#P    #   B I#",
                 "##############"));
         Player p = playerfactory.createPacMan();
         level.registerPlayer(p);
@@ -128,7 +130,7 @@ public class InkyTest {
     @Test
     void destinationOutOfBoundaryTest() {
         level = parser.parseMap(
-            Lists.newArrayList("#############", "#P        B#",
+            Lists.newArrayList("#############", "#P        IB#",
                 "#############"));
         Player p = playerfactory.createPacMan();
         level.registerPlayer(p);
@@ -144,7 +146,7 @@ public class InkyTest {
     @Test
     void noPlayerTest() {
         level = parser.parseMap(
-            Lists.newArrayList("#############", "#          #",
+            Lists.newArrayList("#############", "#          I#",
                 "#############"));
         Inky i = Navigation.findUnitInBoard(Inky.class, level.getBoard());
         assertThat(i.nextAiMove()).isEqualTo(Optional.empty());
