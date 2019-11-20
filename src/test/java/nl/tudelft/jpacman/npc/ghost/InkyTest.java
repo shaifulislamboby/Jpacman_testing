@@ -40,10 +40,10 @@ public class InkyTest {
     @BeforeEach
     void setUp() {
         PacManSprites sprites = new PacManSprites();
-        pointCalculator= new DefaultPointCalculator();
+        pointCalculator = new DefaultPointCalculator();
         playerfactory = new PlayerFactory(sprites);
         ghostFactory = new GhostFactory(sprites);
-        levelfactory = new LevelFactory(sprites, ghostFactory,pointCalculator);
+        levelfactory = new LevelFactory(sprites, ghostFactory, pointCalculator);
         boardfactory = new BoardFactory(sprites);
         parser = new GhostMapParser(levelfactory, boardfactory, ghostFactory);
     }

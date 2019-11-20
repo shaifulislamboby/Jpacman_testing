@@ -41,7 +41,7 @@ public final class GhostMapParser extends MapParser {
                 grid[x][y] = makeGhostSquare(ghosts, ghostFactory.createClyde());
                 break;
             case 'I':
-                grid[x][y]=makeGhostSquare(ghosts,ghostFactory.createInky());
+                grid[x][y]= makeGhostSquare(ghosts, ghostFactory.createInky());
                 break;
             case 'B':
                 grid[x][y] = makeGhostSquare(ghosts, ghostFactory.createBlinky());
