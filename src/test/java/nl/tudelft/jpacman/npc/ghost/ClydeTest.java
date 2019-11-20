@@ -11,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.google.common.collect.Lists;
 import nl.tudelft.jpacman.board.Direction;
+import nl.tudelft.jpacman.points.DefaultPointCalculator;
 import nl.tudelft.jpacman.points.PointCalculator;
 import nl.tudelft.jpacman.sprite.PacManSprites;
 import org.junit.jupiter.api.BeforeEach;
@@ -42,6 +43,7 @@ public class ClydeTest {
     @BeforeEach
     void setUp() {
         PacManSprites sprites = new PacManSprites();
+        pointCalculator = new DefaultPointCalculator();
 
         playerfactory = new PlayerFactory(sprites);
         ghostFactory = new GhostFactory(sprites);
