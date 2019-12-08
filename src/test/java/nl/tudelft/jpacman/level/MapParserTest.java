@@ -37,6 +37,7 @@ public class MapParserTest {
         when(boardCreator.createGround()).thenReturn(ground);
         when(boardCreator.createWall()).thenReturn(wall);
         boardCreator.createWall();
+        boardCreator.createWall();
 
     }
 
@@ -45,10 +46,10 @@ public class MapParserTest {
      */
     @Test
     void niceWeather() {
-        int x = 3;
+
         mapParser.parseMap(Lists.newArrayList("##", "  "));
         verify(boardCreator, times(2)).createGround();
-        verify(boardCreator, times(x)).createWall();
+        verify(boardCreator, times(4)).createWall();
     }
 
     /**
