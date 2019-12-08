@@ -5,15 +5,13 @@ import nl.tudelft.jpacman.points.DefaultPointCalculator;
 import nl.tudelft.jpacman.points.PointCalculator;
 import org.junit.jupiter.api.BeforeEach;
 
-import static org.mockito.Mockito.mock;
-
 
 /**
  * @author: Rahman
  * @discription:
  */
 public class PlayerCollisionsTest extends CollisionMapTest {
-    private final PointCalculator point= new DefaultPointCalculator();
+    private final PointCalculator point = new DefaultPointCalculator();
 
     @Override
     void set() {

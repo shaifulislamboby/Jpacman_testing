@@ -17,7 +17,7 @@ public class GameUnitTest {
     private Game singlePlayerGame;
     private final Level level = mock(Level.class);
     private final Player player = mock(Player.class);
-    private final PointCalculator point= mock(PointCalculator.class);
+    private final PointCalculator point = mock(PointCalculator.class);
     private final PlayerFactory playerFactory = mock(PlayerFactory.class);
 
     private final GameFactory gameFactory = new GameFactory(playerFactory);
@@ -28,7 +28,7 @@ public class GameUnitTest {
     @BeforeEach
     void setUp() {
         when(playerFactory.createPacMan()).thenReturn(player);
-        singlePlayerGame = gameFactory.createSinglePlayerGame(level,point);
+        singlePlayerGame = gameFactory.createSinglePlayerGame(level, point);
     }
 
     /**

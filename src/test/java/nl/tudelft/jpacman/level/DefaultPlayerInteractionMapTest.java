@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
  * @discription:
  */
 public class DefaultPlayerInteractionMapTest extends CollisionMapTest {
-    private final PointCalculator point= new DefaultPointCalculator();
+    private final PointCalculator point = new DefaultPointCalculator();
 
     @Override
     void set() {
