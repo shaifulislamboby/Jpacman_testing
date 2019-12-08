@@ -36,8 +36,7 @@ public class MapParserTest {
         mapParser = new MapParser(levelCreator, boardCreator);
         when(boardCreator.createGround()).thenReturn(ground);
         when(boardCreator.createWall()).thenReturn(wall);
-        boardCreator.createWall();
-        boardCreator.createWall();
+
 
     }
 
@@ -49,7 +48,7 @@ public class MapParserTest {
 
         mapParser.parseMap(Lists.newArrayList("##", "  "));
         verify(boardCreator, times(2)).createGround();
-        verify(boardCreator, times(4)).createWall();
+        verify(boardCreator, times(2)).createWall();
     }
 
     /**
