@@ -8,7 +8,8 @@ import static org.mockito.Mockito.verify;
 
 /**
  * @author: Rahman.
- * @discription:
+ * @discription: This abstract class is written for testing some possible consequences
+ * of the decision table, that has already mentioned in the document.
  */
 public abstract class CollisionMapTest {
     private Player player = mock(Player.class);
