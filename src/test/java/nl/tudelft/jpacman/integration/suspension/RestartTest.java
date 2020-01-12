@@ -1,4 +1,4 @@
-package nl.tudelft.jpacman.integartion.suspension;
+package nl.tudelft.jpacman.integration.suspension;
 
 import nl.tudelft.jpacman.Launcher;
 import nl.tudelft.jpacman.game.Game;
@@ -7,10 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 /**
- * @author: Chenru Lin
- * @discription:
+ * Author : rahman
  */
 public class RestartTest {
     private Launcher launcher;
