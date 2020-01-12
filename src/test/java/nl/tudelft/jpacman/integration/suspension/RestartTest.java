@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 /**
- * Author : rahman
+ * Author rahman
  */
 public class RestartTest {
     private Launcher launcher;

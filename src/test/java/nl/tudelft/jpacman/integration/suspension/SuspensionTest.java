@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SuspensionTest {
 
     /**
-     * Author Islam
+     * Author Rahman
      */
 
         private Launcher launcher;
