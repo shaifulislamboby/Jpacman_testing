@@ -1,4 +1,4 @@
-package nl.tudelft.jpacman.integration.suspension;
+package nl.tudelft.jpacman.integartion.suspension;
 
 import nl.tudelft.jpacman.Launcher;
 import nl.tudelft.jpacman.game.Game;
