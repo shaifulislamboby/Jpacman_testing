@@ -16,7 +16,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * @author: Chenru Lin
+ * @author: Rahman
  * @discription:
  */
 public class PlayerConsumeTest {
