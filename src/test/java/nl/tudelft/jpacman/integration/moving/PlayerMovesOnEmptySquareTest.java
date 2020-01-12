@@ -3,9 +3,7 @@ package nl.tudelft.jpacman.integration.moving;
 import nl.tudelft.jpacman.Launcher;
 import nl.tudelft.jpacman.board.Direction;
 import nl.tudelft.jpacman.board.Square;
-import nl.tudelft.jpacman.board.Unit;
 import nl.tudelft.jpacman.game.Game;
-import nl.tudelft.jpacman.level.Pellet;
 import nl.tudelft.jpacman.level.Player;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @author: Rahman
  * @discription:
  */
-public class PlayerConsumeTest {
+public class PlayerMovesOnEmptySquareTest {
     private Launcher launcher;
     private List<Player> players;
     /**
@@ -42,37 +40,34 @@ public class PlayerConsumeTest {
      * A test for player consume a pellet in the square next
      * to the player.The default map is used.
      */
+
     @Test
-    public void consumeTest() {
+    public void moveToEmptySquareTest() {
         launcher.launch();
         getGame().start();
         players = getGame().getPlayers();
         Player player = players.get(0);
+        getGame().move(player, Direction.EAST); //Move the player to the east.
         int score = player.getScore();
-        Square playerSquare = player.getSquare();
-        Square pelletSquare = playerSquare.getSquareAt(Direction.EAST);
-        List<Unit> units = pelletSquare.getOccupants();
 
-        assertThat((units.get(0)) instanceof Pellet).isTrue();
-        // Check if the square on the east contains a pellet.
+        /**
+         * Now the previous square is empty, and the player is on its east.
+         */
 
-        Pellet pellet = (Pellet) units.get(0);
-        getGame().move(player, Direction.EAST);
+        Square playerSquare = player.getSquare(); //The current square
+        assertThat(playerSquare.getSquareAt(Direction.WEST).getOccupants()).isEmpty();
+        // Check if the square on the west if empty.
+
+        getGame().move(player, Direction.WEST); //Move to the empty square
         Square newPlayerSquare = player.getSquare();
 
-        assertThat(playerSquare.getSquareAt(Direction.EAST)).isEqualTo(newPlayerSquare);
+        assertThat(playerSquare.getSquareAt(Direction.WEST)).isEqualTo(newPlayerSquare);
         // Check if the player moved in the right direction.
 
-        assertThat(player.getScore()).isEqualTo(score + pellet.getValue());
-        // Check if the player got the score.
 
-        assertThat(newPlayerSquare.getOccupants().size()).isEqualTo(1);
-        assertThat(newPlayerSquare.getOccupants().get(0)).isEqualTo(player);
-        // Check if the pellet left the square.
-
+        assertThat(player.getScore()).isEqualTo(score);
+        // Check if the score remain the same.
     }
-
-
 
     private Game getGame() {
         return launcher.getGame();
