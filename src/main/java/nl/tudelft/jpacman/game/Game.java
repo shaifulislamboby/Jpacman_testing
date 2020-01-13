@@ -42,6 +42,9 @@ public abstract class Game implements LevelObserver {
         inProgress = false;
     }
 
+    protected Game() {
+    }
+
     /**
      * Starts or resumes the game.
      */
