@@ -165,3 +165,17 @@ can easily be used by (the latest versions of) standard (open source) Java devel
 
 ----
 [![Creative Commons License](http://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
+## Scenario 5
+As a player;
+We want to continue the game;
+So that we can play the next level.
+
+Scenario S5.1: The player continues the game
+Given the player has won the current level,
+and   the current number of level is smaller than 3;
+Then  the next level can be played.
+
+Scenario S5.2: The player ends the game
+Given the player has won the current level,
+and   the current number of level is greater or equal to 3;
+Then  the game ends.
