@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * A game with one player and a single level.
  *
- * @author Shijie Zhou
+ * @author
  */
 public class MultiLevelGame extends Game {
 
