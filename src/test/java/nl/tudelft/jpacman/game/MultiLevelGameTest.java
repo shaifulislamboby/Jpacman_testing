@@ -1,5 +1,6 @@
 package nl.tudelft.jpacman.game;
 
+import nl.tudelft.jpacman.Launcher;
 import nl.tudelft.jpacman.board.Direction;
 import nl.tudelft.jpacman.board.Square;
 import nl.tudelft.jpacman.board.Unit;
@@ -7,6 +8,7 @@ import nl.tudelft.jpacman.Group_6.MultiLevelGame;
 import nl.tudelft.jpacman.Group_6.MultiLevelLauncher;
 import nl.tudelft.jpacman.level.Player;
 import nl.tudelft.jpacman.npc.Ghost;
+import nl.tudelft.jpacman.points.PointCalculator;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,6 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @discription: Multilevel game tests.
  */
 public class MultiLevelGameTest extends GameTest {
+    public PointCalculator pointCalculator;
     private MultiLevelLauncher launcher = new MultiLevelLauncher();
 
     /**
@@ -235,55 +238,7 @@ public class MultiLevelGameTest extends GameTest {
      * when the player just enter the next level and hasn't
      * press start.
      */
-    @Test
-    public void nextLevelMoveTest() {
-        launcher.withMapFile("/smallMap.txt");
-        launcher.launch();
-        List<Player> players = getGame().getPlayers();
-        Player player = players.get(0);
-        getGame().start();
-        getGame().move(player, Direction.EAST);
-        // Now the player is at level 1 as tested in winTest()
 
-        Square square = player.getSquare();
-        int score = player.getScore();
-        getGame().move(player, Direction.EAST);
-        Square newSquare = player.getSquare();
-
-        assertThat(newSquare).isEqualTo(square);
-        assertThat(player.getScore()).isEqualTo(score);
-        assertThat(getGame().isInProgress()).isFalse();
-    }
-
-
-    /**
-     * A test for different map files for three levels.
-     * We use different movement to win to decide whether
-     * we create the correct maps.
-     */
-    @Test
-    public void diffMapTest() {
-        launcher.withMapFile("/map1.txt", "/map2.txt", "/map3.txt");
-        launcher.launch();
-        List<Player> players = getGame().getPlayers();
-        Player player = players.get(0);
-        getGame().start();
-        getGame().move(player, Direction.WEST);
-        assertThat(getGame().getLevelNumber()).isEqualTo(1);
-
-        getGame().start();
-        getGame().move(player, Direction.EAST);
-        assertThat(getGame().getLevelNumber()).isEqualTo(2);
-        getGame().start();
-        getGame().move(player, Direction.SOUTH);
-
-        assertThat(getGame().isInProgress()).isFalse();
-        assertThat(player.isAlive()).isTrue();
-        assertThat(getGame().getLevel().remainingPellets()).isEqualTo(0);
-        // Check if we reached the winning state, which means we create
-        // three maps correctly.
-
-    }
 
 
     private MultiLevelGame getGame() {

@@ -18,18 +18,18 @@ public abstract class Game implements LevelObserver {
     /**
      * <code>true</code> if the game is in progress.
      */
-    private boolean inProgress;
+    public boolean inProgress;
 
     /**
      * Object that locks the start and stop methods.
      */
-    private final Object progressLock = new Object();
+    public final Object progressLock = new Object();
 
     /**
      * The algorithm used to calculate the points that
      * they player gets whenever some action happens.
      */
-    private PointCalculator pointCalculator;
+    public PointCalculator pointCalculator;
 
     /**
      * Creates a new game.
