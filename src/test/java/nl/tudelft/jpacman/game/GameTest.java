@@ -23,7 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @discription:
  */
 public class GameTest {
-    private Launcher launcher;
+    protected Launcher launcher;
 
 
     /**

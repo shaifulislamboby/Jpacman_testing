@@ -1,7 +1,5 @@
 package nl.tudelft.jpacman.Group_6;
 
-
-
 import com.google.common.collect.ImmutableList;
 import nl.tudelft.jpacman.game.Game;
 import nl.tudelft.jpacman.level.Level;
@@ -13,7 +11,7 @@ import java.util.List;
 /**
  * A game with one player and a single level.
  *
- * @author
+ * @author Shijie Zhou
  */
 public class MultiLevelGame extends Game {
 
@@ -67,7 +65,6 @@ public class MultiLevelGame extends Game {
      *            The level3.
      */
     public MultiLevelGame(Player player, Level level1, Level level2, Level level3) {
-
         assert player != null;
         assert level1 != null;
         assert level2 != null;

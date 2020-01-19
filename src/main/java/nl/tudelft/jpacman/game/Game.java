@@ -23,7 +23,7 @@ public abstract class Game implements LevelObserver {
     /**
      * Object that locks the start and stop methods.
      */
-    public final Object progressLock = new Object();
+    public  Object progressLock = new Object();
 
     /**
      * The algorithm used to calculate the points that
@@ -44,6 +44,7 @@ public abstract class Game implements LevelObserver {
 
     protected Game() {
     }
+
 
     /**
      * Starts or resumes the game.
