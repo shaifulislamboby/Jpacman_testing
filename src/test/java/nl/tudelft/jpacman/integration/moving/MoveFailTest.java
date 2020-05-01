@@ -37,7 +37,7 @@ public class MoveFailTest {
     }
 
     /**
-     * A test for player consume a pellet in the square next
+     * A test for player dd consume a pellet in the square next
      * to the player.The smallMap is used.
      */
     @Test
