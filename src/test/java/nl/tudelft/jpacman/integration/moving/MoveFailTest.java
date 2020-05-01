@@ -29,7 +29,7 @@ public class MoveFailTest {
     }
 
     /**
-     * Close the user interface.
+     * Close the user interface.ad
      */
     @AfterEach
     public void after() {

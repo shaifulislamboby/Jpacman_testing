@@ -16,6 +16,9 @@ import org.junit.jupiter.api.Test;
 public class GameUnitTest {
     private Game singlePlayerGame;
     private final Level level = mock(Level.class);
+
+    }
+
     private final Player player = mock(Player.class);
     private final PointCalculator point = mock(PointCalculator.class);
     private final PlayerFactory playerFactory = mock(PlayerFactory.class);

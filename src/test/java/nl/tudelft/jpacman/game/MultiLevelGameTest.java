@@ -1,10 +1,10 @@
 package nl.tudelft.jpacman.game;
 
+import nl.tudelft.jpacman.Group_6.MultiLevelGame;
+import nl.tudelft.jpacman.Group_6.MultiLevelLauncher;
 import nl.tudelft.jpacman.board.Direction;
 import nl.tudelft.jpacman.board.Square;
 import nl.tudelft.jpacman.board.Unit;
-import nl.tudelft.jpacman.Group_6.MultiLevelGame;
-import nl.tudelft.jpacman.Group_6.MultiLevelLauncher;
 import nl.tudelft.jpacman.level.Player;
 import nl.tudelft.jpacman.npc.Ghost;
 import org.junit.jupiter.api.AfterEach;

@@ -80,7 +80,7 @@ tasks.withType(com.github.spotbugs.SpotBugsTask) {
         html.enabled = true
     }
 }
-tasks.withType(Test).configureEach { it.outputs.upToDateWhen {"true" != System.getProperty("idea.resolveSourceSetDependencies")} }
+
 task staticAnalysis(type: GradleBuild) {
     tasks = [
         'clean',
