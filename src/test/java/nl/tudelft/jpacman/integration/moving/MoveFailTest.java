@@ -21,7 +21,7 @@ public class MoveFailTest {
     private Launcher launcher;
     private List<Player> players;
     /**
-     * Start a launcher, which can display the user interface.
+     * Start a launcher, which can display the user  and interface.
      */
     @BeforeEach
     public void before() {
